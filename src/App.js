@@ -1,6 +1,8 @@
-import Container from "./components/Container/Container";
-import {RickAndMortyCard} from "components";
-import {SimpsonsCard} from "components";
+import {
+    Container,
+    RickAndMortyCard,
+    SimpsonsCard,
+} from "components";
 import simpsons from "./simpson.json";
 import character from "./character.json";
 
