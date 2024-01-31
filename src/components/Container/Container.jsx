@@ -1,7 +1,9 @@
+import css from "./Container.module.css";
+
 const Container = ({title, children}) => {
     return (
-        <div>
-            <h2>{title}</h2>
+        <div className={css.container}>
+            <h2 className={css.title}>{title}</h2>
             {children}
         </div>
     );

@@ -1,13 +1,14 @@
-const SimpsonsCard = ({simpson: {name, surname, age, info, photo}}) => {
+const SimpsonsCard = ({item: {name, surname, age, info, photo}}) => {
     return (
-        <li>
+        <>
             <img src={photo}
                  alt={name}
+                 style={{display: "block", width: 300, height: 400}}
             />
             <p>{name} {surname}</p>
             <p>age: {age}</p>
             <p>{info}</p>
-        </li>
+        </>
     );
 };
 

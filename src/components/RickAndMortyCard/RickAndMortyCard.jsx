@@ -1,5 +1,5 @@
 const RickAndMortyCard = ({
-                              character: {
+                              item: {
                                   name,
                                   status,
                                   species,
@@ -8,15 +8,16 @@ const RickAndMortyCard = ({
                               },
                           }) => {
     return (
-        <li>
+        <>
             <img src={image}
                  alt={name}
+                 style={{display: "block"}}
             />
             <p>{name}</p>
             <p>{status}</p>
             <p>{species}</p>
             <p>{gender}</p>
-        </li>
+        </>
     );
 };
 
