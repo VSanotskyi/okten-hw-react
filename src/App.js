@@ -3,7 +3,7 @@ import {
     List,
     RickAndMortyCard,
     SimpsonsCard,
-} from "components";
+} from "./components";
 
 import simpsons from "./data/simpson.json";
 import character from "./data/character.json";
