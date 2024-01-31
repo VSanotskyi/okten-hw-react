@@ -3,8 +3,8 @@ import {
     RickAndMortyCard,
     SimpsonsCard,
 } from "components";
-import simpsons from "./simpson.json";
-import character from "./character.json";
+import simpsons from "./data/simpson.json";
+import character from "./data/character.json";
 
 const App = () => {
     return (
