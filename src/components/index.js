@@ -1,0 +1,1 @@
+export {default as RickAndMortyCard} from "./RickAndMortyCard/RickAndMortyCard";
