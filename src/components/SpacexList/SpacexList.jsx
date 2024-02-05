@@ -15,9 +15,7 @@ const SpacexList = () => {
         const data = await getSpacexApi();
         setList(filterArray(data));
     };
-
-    console.log(list);
-
+    
     return (
         <ul className={css.list}>
             {
