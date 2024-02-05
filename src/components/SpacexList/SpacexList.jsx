@@ -15,7 +15,11 @@ const SpacexList = () => {
         const data = await getSpacexApi();
         setList(filterArray(data));
     };
-    
+
+    const filterArray = (array) => {
+        return array.filter(item => item.launch_year !== "2020");
+    };
+
     return (
         <ul className={css.list}>
             {
@@ -28,7 +32,3 @@ const SpacexList = () => {
 };
 
 export default SpacexList;
-
-const filterArray = (array) => {
-    return array.filter(item => item.launch_year !== "2020");
-};

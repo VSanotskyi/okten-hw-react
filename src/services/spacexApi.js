@@ -1,10 +1,9 @@
 import axios from "axios";
-
-const baseUrl = "https://api.spacexdata.com/v3/";
+import {baseUrl, urls} from "../constants/urls";
 
 axios.defaults.baseURL = baseUrl;
 
 export const getSpacexApi = async () => {
-    const result = await axios("launches/");
+    const result = await axios(urls.spacex.base);
     return result.data;
 };
