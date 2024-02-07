@@ -56,6 +56,7 @@ const UserForm = () => {
                 <label className={css.label}>
                     Name
                     <input
+                        placeholder="Liberty Puckett"
                         type="text"
                         name="name"
                         value={user.name}
@@ -66,6 +67,7 @@ const UserForm = () => {
                 <label className={css.label}>
                     UserName
                     <input
+                        placeholder="pitimicuz"
                         type="text"
                         name="username"
                         value={user.username}
@@ -76,6 +78,7 @@ const UserForm = () => {
                 <label className={css.label}>
                     Email
                     <input
+                        placeholder="bysoqezaq@mailinator.com"
                         type="email"
                         name="email"
                         value={user.email}
@@ -86,6 +89,7 @@ const UserForm = () => {
                 <label className={css.label}>
                     Phone
                     <input
+                        placeholder="+1 (449) 826-8378"
                         type="tel"
                         name="phone"
                         value={user.phone}
