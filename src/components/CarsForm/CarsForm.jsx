@@ -17,9 +17,9 @@ const CarsForm = ({setIsUpdateCarsList, carForUpdate, setCarForUpdate}) => {
 
     useEffect(() => {
         if (carForUpdate) {
-            setValue("brand", carForUpdate.brand);
-            setValue("price", carForUpdate.price);
-            setValue("year", carForUpdate.year);
+            setValue("brand", carForUpdate.brand, {shouldValidate: true});
+            setValue("price", carForUpdate.price, {shouldValidate: true});
+            setValue("year", carForUpdate.year, {shouldValidate: true});
         }
     }, [carForUpdate]);
 
