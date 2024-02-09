@@ -6,6 +6,7 @@ const CarItem = ({car, setCarForUpdate, setIsUpdateCarsList}) => {
     const handleDel = async () => {
         await removeById(id);
         setIsUpdateCarsList(prev => !prev);
+        setCarForUpdate(null);
     };
 
     return (
