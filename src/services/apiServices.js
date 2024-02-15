@@ -24,9 +24,11 @@ const getAllCommentsByPostId = async (id) => {
     return data;
 };
 
-export default {
+const apiServices = {
     getAllUsers,
     getUserById,
     getPostsByUserId,
     getAllCommentsByPostId,
 };
+
+export default apiServices;

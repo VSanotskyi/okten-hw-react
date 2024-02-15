@@ -14,7 +14,7 @@ const CommentPages = () => {
     const {id} = useParams();
     const navigate = useNavigate();
 
-    const getComments = async () => {
+    const getComments = async (id) => {
         setIsLoading(true);
         try {
             const res = await apiServices.getAllCommentsByPostId(id);
@@ -27,8 +27,8 @@ const CommentPages = () => {
     };
 
     useEffect(() => {
-        getComments();
-    }, []);
+        getComments(id);
+    }, [id]);
 
     return (
         <div>

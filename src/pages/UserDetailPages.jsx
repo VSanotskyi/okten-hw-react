@@ -14,7 +14,7 @@ const UserDetailPages = () => {
     const {id} = useParams();
     const {state} = useLocation();
 
-    const getUserDetail = async () => {
+    const getUserDetail = async (id) => {
         setIsLoading(true);
         try {
             const res = await apiServices.getUserById(id);
@@ -34,9 +34,9 @@ const UserDetailPages = () => {
         if (state?.user) {
             setUser(state.user);
         } else {
-            getUserDetail();
+            getUserDetail(id);
         }
-    }, [id]);
+    }, [id, state]);
 
 
     return (

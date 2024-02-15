@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 import apiServices from "../services/apiServices";
 import List from "../components/List/List";
-import UserItem from "../components/Users/UserItem";
+import UserItem from "../components/UserItem/UserItem";
 
 const UserPages = () => {
     const [users, setUsers] = useState(null);
