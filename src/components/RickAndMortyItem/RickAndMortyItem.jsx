@@ -1,6 +1,7 @@
-import css from "./RickAndMortyItem.module.css";
 import {useContext} from "react";
+
 import {Context} from "../../hoc";
+import css from "./RickAndMortyItem.module.css";
 
 const RickAndMortyItem = ({item}) => {
     const {id, name, episode, characters} = item;
