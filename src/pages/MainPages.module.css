@@ -1,0 +1,17 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: antiquewhite;
+    border: none;
+}
+
+.btn:hover, .btn:focus {
+    background-color: blueviolet;
+    color: antiquewhite;
+}
