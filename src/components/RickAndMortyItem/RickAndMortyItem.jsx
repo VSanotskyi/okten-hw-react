@@ -1,23 +1,28 @@
 import {useContext} from "react";
 
 import {Context} from "../../hoc";
+import {charactersServices} from "../../services";
 import css from "./RickAndMortyItem.module.css";
 
 const RickAndMortyItem = ({item}) => {
     const {id, name, episode, characters} = item;
-    const {setCharacters} = useContext(Context);
-
-    const characterId = characters.map(el => el.split("/")[5]);
+    const {setCharacters, setError, setIsLoading} = useContext(Context);
 
     const handleClick = () => {
         setCharacters([]);
-        characterId.map(el => {
-            fetch(`https://rickandmortyapi.com/api/character/${el}`)
-                .then(data => data.json())
-                .then(res => {
-                    setCharacters(prev => ([...prev, res.image]));
-                })
-                .catch(console.log);
+        setIsLoading(true);
+        
+        const characterId = characters.map(el => el.split("/")[5]);
+
+        characterId.map(async el => {
+            try {
+                const {data} = await charactersServices.getById(el);
+                setCharacters(prev => ([...prev, data.image]));
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setIsLoading(false);
+            }
         });
     };
 
@@ -33,3 +38,4 @@ const RickAndMortyItem = ({item}) => {
 };
 
 export default RickAndMortyItem;
+
