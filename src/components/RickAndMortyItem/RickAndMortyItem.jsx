@@ -9,6 +9,7 @@ const RickAndMortyItem = ({item}) => {
     const characterId = characters.map(el => el.split("/")[5]);
 
     const handleClick = () => {
+        setCharacters([]);
         characterId.map(el => {
             fetch(`https://rickandmortyapi.com/api/character/${el}`)
                 .then(data => data.json())
@@ -16,7 +17,6 @@ const RickAndMortyItem = ({item}) => {
                     setCharacters(prev => ([...prev, res.image]));
                 });
         });
-
     };
 
     return (

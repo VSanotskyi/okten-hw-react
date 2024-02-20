@@ -1,12 +1,10 @@
 import {useCallback, useContext, useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
 
-import {Context} from "../hoc";
 import {episodeServices} from "../services";
-import RickAndMortyList from "../components/RickAndMortyList/RickAndMortyList";
+import {Context} from "../hoc";
+import {List, RickAndMortyItem, CharacterItem} from "../components";
 import css from "./MainPages.module.css";
-import List from "../components/List/List";
-import CharacterItem from "../components/CharacterItem/CharacterItem";
 
 const MainPages = () => {
     const [query, setQuery] = useSearchParams({page: "1"});
@@ -47,7 +45,12 @@ const MainPages = () => {
             {isLoading && <h2>Loading...</h2>}
             {error && <h2>{error}</h2>}
             {items && <>
-                <RickAndMortyList items={items}/>
+                <List items={items}
+                      renderItem={(item) => <RickAndMortyItem key={item.id}
+                                                              item={item}
+                      />}
+                      title={"Rick and Morty"}
+                />
                 <div className={css.wrapper}>
                     <button className={css.btn}
                             disabled={currentPage === 1}
@@ -61,8 +64,9 @@ const MainPages = () => {
                     </button>
                 </div>
             </>}
-            {characters && <List items={characters}
-                                 renderItem={(item) => <CharacterItem item={item}/>}
+            {characters.length > 0 && <List items={characters}
+                                            renderItem={(item) => <CharacterItem item={item}/>}
+                                            title={"Rick and Morty characters"}
             />}
         </div>
     );
