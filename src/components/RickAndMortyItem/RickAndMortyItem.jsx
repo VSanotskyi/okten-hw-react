@@ -16,7 +16,8 @@ const RickAndMortyItem = ({item}) => {
                 .then(data => data.json())
                 .then(res => {
                     setCharacters(prev => ([...prev, res.image]));
-                });
+                })
+                .catch(console.log);
         });
     };
 
