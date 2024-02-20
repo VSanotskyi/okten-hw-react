@@ -6,7 +6,10 @@ const List = ({items, renderItem, title}) => {
             {title && <h2 className={css.title}>{title}</h2>}
             <ul className={css.list}>
                 {
-                    items.map(item => <li key={item}>{renderItem(item)}</li>)
+                    items.map(item => {
+                        const itemKey = typeof item === "string" ? item : item.id;
+                        return <li key={itemKey}>{renderItem(item)}</li>;
+                    })
                 }
             </ul>
         </>

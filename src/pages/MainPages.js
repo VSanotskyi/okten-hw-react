@@ -46,9 +46,8 @@ const MainPages = () => {
             {error && <h2>{error}</h2>}
             {items && <>
                 <List items={items}
-                      renderItem={(item) => <RickAndMortyItem key={item.id}
-                                                              item={item}
-                      />}
+                      renderItem={(item) => <RickAndMortyItem item={item}/>
+                      }
                       title={"Rick and Morty"}
                 />
                 <div className={css.wrapper}>
