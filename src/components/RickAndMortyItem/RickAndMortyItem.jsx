@@ -21,13 +21,13 @@ const RickAndMortyItem = ({item}) => {
     };
 
     return (
-        <li className={css.item}
-            onClick={handleClick}
+        <div className={css.item}
+             onClick={handleClick}
         >
             <p>{id}</p>
             <p>{name}</p>
             <p>{episode}</p>
-        </li>
+        </div>
     );
 };
 
