@@ -1,8 +1,13 @@
+import {Route, Router, Routes} from "react-router-dom";
+import MainPages from "./pages/MainPages";
+
 const App = () => {
     return (
-        <div>
-            
-        </div>
+        <Routes>
+            <Route path={""}
+                   element={<MainPages/>}
+            />
+        </Routes>
     );
 };
 
