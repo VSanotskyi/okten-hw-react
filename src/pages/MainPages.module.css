@@ -11,7 +11,7 @@
     border: none;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover {
     background-color: blueviolet;
     color: antiquewhite;
 }

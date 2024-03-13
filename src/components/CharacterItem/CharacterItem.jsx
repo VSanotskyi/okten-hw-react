@@ -1,7 +1,7 @@
 const CharacterItem = ({item}) => {
     return (
-        <img src={item}
-             alt="characters Rick and Morty"
+        <img src={item.image}
+             alt={item.name}
              width={200}
              height={200}
         />

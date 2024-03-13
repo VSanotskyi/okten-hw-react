@@ -1,13 +1,14 @@
+import {Provider} from "react-redux";
 import {RouterProvider} from "react-router-dom";
 
-import ContextProvider from "./hoc/ContextProvider";
+import {store} from "./store";
 import {router} from "./router";
 
 const App = () => {
     return (
-        <ContextProvider>
+        <Provider store={store}>
             <RouterProvider router={router}/>
-        </ContextProvider>
+        </Provider>
     );
 };
 

@@ -1,29 +1,17 @@
-import {useContext} from "react";
-
-import {Context} from "../../hoc";
-import {charactersServices} from "../../services";
 import css from "./RickAndMortyItem.module.css";
+import {useDispatch} from "react-redux";
+import {getCharactersByEpisode} from "../../store/characters";
 
 const RickAndMortyItem = ({item}) => {
     const {id, name, episode, characters} = item;
-    const {setCharacters, setError, setIsLoading} = useContext(Context);
+    const dispatch = useDispatch();
+
+
+    const charactersId = characters.map(el => Number(el.split("/")[el.split("/").length - 1]));
 
     const handleClick = () => {
-        setCharacters([]);
-        setIsLoading(true);
-        
-        const characterId = characters.map(el => el.split("/")[5]);
-
-        characterId.map(async el => {
-            try {
-                const {data} = await charactersServices.getById(el);
-                setCharacters(prev => ([...prev, data.image]));
-            } catch (error) {
-                setError(error.message);
-            } finally {
-                setIsLoading(false);
-            }
-        });
+        console.log(charactersId);
+        dispatch(getCharactersByEpisode(charactersId));
     };
 
     return (
